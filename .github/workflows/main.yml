@@ -16,7 +16,7 @@ jobs:
     - name: Build the damn executable
       run: pyinstaller --onefile --windowed my_script.py
     - name: Upload the fucking file
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: my_script
         path: dist/my_script.exe
