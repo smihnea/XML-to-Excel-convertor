@@ -8,6 +8,11 @@ from tkinter import filedialog, ttk, messagebox
 from threading import Thread
 import sv_ttk  # Custom modern theme for ttk (Sun Valley theme)
 
+# PyInstaller path fix for theme files
+if getattr(sys, 'frozen', False):
+    sv_ttk_path = os.path.join(sys._MEIPASS, 'sv_ttk')
+    sys.path.insert(0, sv_ttk_path)
+
 class ModernInvoiceProcessorApp:
     def __init__(self, root):
         self.root = root
@@ -548,6 +553,7 @@ class ModernInvoiceProcessorApp:
         self.process_button.state(['!disabled'])
         self.status_var.set("Error during processing")
         messagebox.showerror("Error", f"An error occurred:\n{error_message}")
+
 
 # Main entry point
 if __name__ == "__main__":
