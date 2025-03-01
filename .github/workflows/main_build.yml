@@ -19,16 +19,15 @@ jobs:
         pip install pyinstaller lxml openpyxl sv_ttk pandas pillow
 
     - name: Build executable
-      shell: bash
       run: |
-        pyinstaller --onefile --windowed \
-          --hidden-import sv_ttk \
-          --hidden-import lxml.etree \
-          --hidden-import lxml._elementpath \
-          --hidden-import openpyxl.xml \
-          --hidden-import PIL \
-          --add-data "sv_ttk;sv_ttk" \
+        pyinstaller --onefile --windowed `
+          --hidden-import sv_ttk `
+          --hidden-import lxml.etree `
+          --hidden-import lxml._elementpath `
+          --hidden-import openpyxl.xml `
+          --hidden-import PIL `
           main.py
+
 
 
     - name: Upload artifact
