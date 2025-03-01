@@ -134,7 +134,7 @@ class ModernInvoiceProcessorApp:
         
         # Folder label
         self.folder_label = ttk.Label(self.folder_frame, 
-                                     text="XML Invoices Folder or ZIP:", 
+                                     text="1. Select XML Invoices (Folder or ZIP):", 
                                      font=("Segoe UI", 10))
         self.folder_label.grid(row=0, column=0, sticky="w", padx=(0, 10), pady=5)
         
@@ -164,7 +164,7 @@ class ModernInvoiceProcessorApp:
         
         # Output file label
         self.output_label = ttk.Label(self.output_frame, 
-                                     text="Output Excel File:", 
+                                     text="2. Select output location and name:", 
                                      font=("Segoe UI", 10))
         self.output_label.grid(row=0, column=0, sticky="w", padx=(0, 10), pady=5)
         
@@ -174,7 +174,7 @@ class ModernInvoiceProcessorApp:
         self.output_input_frame.columnconfigure(0, weight=1)
         
         # Output file entry
-        self.output_path = tk.StringVar(value="All_Invoices.xlsx")
+        self.output_path = tk.StringVar(value="")
         self.output_entry = ttk.Entry(self.output_input_frame, textvariable=self.output_path)
         self.output_entry.grid(row=0, column=0, sticky="ew", padx=(0, 10))
         
